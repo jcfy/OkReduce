@@ -9,7 +9,7 @@
 @OkPost(url = "http://localhost:8080/",type = ContentType.FORM)
 public interface NewsNetworkApi {
     @OkPost(uri = "news/detail")
-    @OkConfig(log = "新闻列表")
+    @OkConfig(log = "获取新闻列表")
     Result<List<News>> newsList(String newsId);
 }
 ```
@@ -112,15 +112,15 @@ public interface NewsNetworkApi {
     User userDetail(@OkParam("USER_ID") String userId);
 
     @OkPost(uri = "user/friendList")
-    @OkConfig(log = "好友列表")
+    @OkConfig(log = "获取好友列表")
     List<User> friendList();
 
     @OkPost(uri = "news/detail")
-    @OkConfig(log = "新闻列表")
+    @OkConfig(log = "获取新闻列表")
     Result<List<News>> newsList(String newsId);
 
     @OkPost(uri = "news/info")
-    @OkConfig(log = "新闻信息")
+    @OkConfig(log = "获取新闻信息")
     Map<String, Object> newsInfo(String newsId);
 
     @OkGet(url = "https://down.qq.com/qqweb/PCQQ/PCQQ_EXE/PCQQ2020.exe")
