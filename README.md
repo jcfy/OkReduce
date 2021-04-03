@@ -35,6 +35,22 @@ NewsList.api().enqueue(new OkCallback<Result<List<News>>>() {
     }
 });
 ```
+## Android 集成
+(默认 UI 线程回调，需要异步线程回调请使用 inThread 方法)<br/><br/>
+引包，在 app/build.gradle 文件下：
+```
+dependencies {
+	//引用OKHttp关联框架
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+    //引用Gson关联框架
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+	//引用OkReduce核心包
+    implementation files('libs/okreduce-android-0.1.aar')
+    //开启OkReduce注解器
+    annotationProcessor files('libs/okreduce-compiler-0.1.jar')
+}
+```
 
 ## Java 集成（IntelliJ IDEA 、Eclipse 、Maven）
 
@@ -72,23 +88,6 @@ NewsList.api().enqueue(new OkCallback<Result<List<News>>>() {
 	<version>2.8.6</version>
 </dependency>
 
-```
-
-## Android 集成
-(默认 UI 线程回调，需要异步线程回调请使用 inThread 方法)<br/><br/>
-引包，在 app/build.gradle 文件下：
-```
-dependencies {
-	//引用OKHttp关联框架
-    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
-    //引用Gson关联框架
-    implementation 'com.google.code.gson:gson:2.8.6'
-
-	//引用OkReduce核心包
-    implementation files('libs/okreduce-android-0.1.aar')
-    //开启OkReduce注解器
-    annotationProcessor files('libs/okreduce-compiler-0.1.jar')
-}
 ```
 
 ## 高级使用
