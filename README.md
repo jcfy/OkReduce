@@ -87,8 +87,9 @@ dependencies {
 	<artifactId>gson</artifactId>
 	<version>2.8.6</version>
 </dependency>
-
 ```
+支持properties文件全局配置方式，配置示例请参考源码中的okconfig.properties文件。<br/>
+加载配置文件的方法：OkGlobalConfig.loadConfig("文件路径")
 
 ## 高级使用
 
