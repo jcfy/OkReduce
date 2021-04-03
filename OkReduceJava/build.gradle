@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation 'junit:junit:4.12'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+}
+sourceCompatibility = "7"
+targetCompatibility = "7"
+
+task makeReleaseJar(type: Jar, dependsOn: ['build']){
+    archiveName = "okreduce-java-${version_name}.jar"
+    from ('build/classes/java/main')
+    destinationDir = file('build/libs')
+}

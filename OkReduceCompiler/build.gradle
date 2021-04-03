@@ -1,0 +1,18 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api files('libs/javapoet-1.12.1.jar')
+}
+
+sourceCompatibility = "6"
+targetCompatibility = "6"
+
+
+task makeReleaseJar(type: Jar, dependsOn: ['build']){
+    archiveName = "okreduce-compiler-${version_name}.jar"
+    from ('build/classes/java/main')
+    from ('build/resources/main')
+    from (project.zipTree('libs/javapoet-1.12.1.jar'))
+    destinationDir = file('build/libs')
+}
