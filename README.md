@@ -17,13 +17,13 @@ public interface NewsNetworkApi {
 ### 使用接口（同步）
 
 ```
-Result<List<News>> result= NewsList.api().execute();
+Result<List<News>> result= NewsList.api().newsId("123").execute();
 ```
 
 ### 使用接口（异步）
 
 ```
-NewsList.api().enqueue(new OkCallback<Result<List<News>>>() {
+NewsList.api().newsId("123").enqueue(new OkCallback<Result<List<News>>>() {
     @Override
     public void onSucceed(Result<List<News>> entity) {
 
